@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular-CRM", "Angular-CRM.csproj", "{D09C506F-2B5F-4E5C-9848-D31E0A742DE1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{DF33D9BE-4FD0-4756-BCF0-198641DABBD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRMasServiceProvider", "CRMasServiceProvider", "{6EBE84C3-E382-49FC-8BA7-014A7B93EAAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDev.AngularAutomation.Services.CRMasServiceLogic", "..\LinkDev.AngularAutomation.Services.CRMasServiceLogic\LinkDev.AngularAutomation.Services.CRMasServiceLogic.csproj", "{8AE04658-AB1B-43A2-BBDD-E084CAE3D4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDev.AngularAutomation.Services.CRMasServiceProviderApi", "..\LinkDev.AngularAutomation.Services.CRMasServiceProviderApi\LinkDev.AngularAutomation.Services.CRMasServiceProviderApi.csproj", "{2CBF9E79-B091-41F5-BD99-1B2C40AECD34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataContracts", "DataContracts", "{7F58540B-137C-48D6-81D2-C088E78116BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDev.AngularAutomation.Services.DataContracts", "..\LinkDev.AngularAutomation.Services.DataContracts\LinkDev.AngularAutomation.Services.DataContracts.csproj", "{C92D10DE-EA06-49C8-ADE1-7F8E62973EB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D09C506F-2B5F-4E5C-9848-D31E0A742DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D09C506F-2B5F-4E5C-9848-D31E0A742DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D09C506F-2B5F-4E5C-9848-D31E0A742DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D09C506F-2B5F-4E5C-9848-D31E0A742DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE04658-AB1B-43A2-BBDD-E084CAE3D4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE04658-AB1B-43A2-BBDD-E084CAE3D4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE04658-AB1B-43A2-BBDD-E084CAE3D4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE04658-AB1B-43A2-BBDD-E084CAE3D4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CBF9E79-B091-41F5-BD99-1B2C40AECD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CBF9E79-B091-41F5-BD99-1B2C40AECD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CBF9E79-B091-41F5-BD99-1B2C40AECD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CBF9E79-B091-41F5-BD99-1B2C40AECD34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92D10DE-EA06-49C8-ADE1-7F8E62973EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92D10DE-EA06-49C8-ADE1-7F8E62973EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92D10DE-EA06-49C8-ADE1-7F8E62973EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92D10DE-EA06-49C8-ADE1-7F8E62973EB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AE04658-AB1B-43A2-BBDD-E084CAE3D4D6} = {DF33D9BE-4FD0-4756-BCF0-198641DABBD8}
+		{2CBF9E79-B091-41F5-BD99-1B2C40AECD34} = {6EBE84C3-E382-49FC-8BA7-014A7B93EAAC}
+		{C92D10DE-EA06-49C8-ADE1-7F8E62973EB9} = {7F58540B-137C-48D6-81D2-C088E78116BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59603266-EA06-4785-81A0-B1C085861A5F}
