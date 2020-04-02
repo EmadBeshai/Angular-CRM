@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LinkDev.AngularAutomation.Services.CRMasServiceProviderApi.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Net.Http.Headers;
 
 namespace LinkDev.AngularAutomation.Services.CRMasServiceProviderApi
 {
@@ -9,6 +11,11 @@ namespace LinkDev.AngularAutomation.Services.CRMasServiceProviderApi
     {
         public static void Register(HttpConfiguration config)
         {
+            config.MessageHandlers.Add(new CorsHandler());
+            // To do : Set at global place ex web.config 
+
+            // Web API configuration and services 
+            //config.EnableCors();
             // Web API configuration and services
 
             // Web API routes
