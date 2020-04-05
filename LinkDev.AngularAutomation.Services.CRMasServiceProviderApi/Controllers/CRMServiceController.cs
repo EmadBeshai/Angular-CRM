@@ -50,5 +50,59 @@ namespace LinkDev.AngularAutomation.Services.CRMasServiceProviderApi.Controllers
             }
         }
 
+
+        [HttpGet]
+        [Route("api/CRMService/GetAccountWithCases")]
+        [ResponseType(typeof(CreateRecordResponse))]
+        [SwaggerResponse(HttpStatusCode.OK, "Retrieves Accounts  from CRM", typeof(AccountCases))]
+        [SwaggerResponse(HttpStatusCode.BadRequest, "Bad Request", typeof(AccountCases))]
+        public HttpResponseMessage GetAccountWithCases()
+        {
+
+            if (ModelState.IsValid)
+            {
+                return _crmServiceLogic.GetAccountsWithCases().HandleResponses(Request);
+            }
+            else
+            {
+                var Errors = ModelState.Keys.Where(i => ModelState[i].Errors.Count > 0)
+.Select(k => new KeyValuePair<string, string>(k, ModelState[k].Errors.First().ErrorMessage)).ToList();
+                return Request.CreateResponse<AccountCases>(new AccountCases
+                {
+                    ProcessingStatus = ProcessStatusEnum.Error.ToString(),
+                    ProcessingCode = "400",
+                    ProcessingMessage = Errors.FirstOrDefault().Value.ToString()
+
+                });
+            }
+        }
+
+
+        [HttpGet]
+        [Route("api/CRMService/GetCasesRelatedtoAccount")]
+        [ResponseType(typeof(CreateRecordResponse))]
+        [SwaggerResponse(HttpStatusCode.OK, "Retrieves Accounts  from CRM", typeof(RetrieveCasesResponse))]
+        [SwaggerResponse(HttpStatusCode.BadRequest, "Bad Request", typeof(RetrieveCasesResponse))]
+        public HttpResponseMessage GetCasesRelatedtoAccount(string AccountID)
+        {
+
+            if (ModelState.IsValid)
+            {
+                return _crmServiceLogic.GetAccountRelatedCases(AccountID).HandleResponses(Request);
+            }
+            else
+            {
+                var Errors = ModelState.Keys.Where(i => ModelState[i].Errors.Count > 0)
+.Select(k => new KeyValuePair<string, string>(k, ModelState[k].Errors.First().ErrorMessage)).ToList();
+                return Request.CreateResponse<RetrieveCasesResponse>(new RetrieveCasesResponse
+                {
+                    ProcessingStatus = ProcessStatusEnum.Error.ToString(),
+                    ProcessingCode = "400",
+                    ProcessingMessage = Errors.FirstOrDefault().Value.ToString()
+
+                });
+            }
+        }
+
     }
 }

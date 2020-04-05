@@ -23,7 +23,33 @@ namespace LinkDev.AngularAutomation.Services.CRMasServiceProviderApi.Helpers
             return handledResponseMessage;
         }
 
-       
-       
+
+        public static HttpResponseMessage HandleResponses(this AccountCases response, HttpRequestMessage request)
+        {
+            var handledResponseMessage = request.CreateResponse(
+                response.ProcessingStatus == ProcessStatusEnum.Error.ToString()
+                    ? HttpStatusCode.BadRequest
+                    : HttpStatusCode.OK, response);
+            handledResponseMessage.Headers.Add("X-SuadiaCargo-ProcessingStatus", response.ProcessingStatus.ToString());
+            handledResponseMessage.Headers.Add("X-SuadiaCargo-ProcessingMessage", response.ProcessingMessage);
+            handledResponseMessage.Headers.Add("X-SuadiaCargo-ProcessingCode",
+                response.ProcessingStatus == ProcessStatusEnum.Error.ToString() ? "400" : "200");
+            return handledResponseMessage;
+        }
+
+        public static HttpResponseMessage HandleResponses(this RetrieveCasesResponse response, HttpRequestMessage request)
+        {
+            var handledResponseMessage = request.CreateResponse(
+                response.ProcessingStatus == ProcessStatusEnum.Error.ToString()
+                    ? HttpStatusCode.BadRequest
+                    : HttpStatusCode.OK, response);
+            handledResponseMessage.Headers.Add("X-SuadiaCargo-ProcessingStatus", response.ProcessingStatus.ToString());
+            handledResponseMessage.Headers.Add("X-SuadiaCargo-ProcessingMessage", response.ProcessingMessage);
+            handledResponseMessage.Headers.Add("X-SuadiaCargo-ProcessingCode",
+                response.ProcessingStatus == ProcessStatusEnum.Error.ToString() ? "400" : "200");
+            return handledResponseMessage;
+        }
+
+
     }
 }

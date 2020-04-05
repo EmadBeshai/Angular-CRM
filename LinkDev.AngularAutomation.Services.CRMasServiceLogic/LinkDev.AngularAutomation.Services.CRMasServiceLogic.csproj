@@ -103,8 +103,10 @@
     <Compile Include="Base\CrmConnection.cs" />
     <Compile Include="Base\ICrmConnection.cs" />
     <Compile Include="Contracts\Requests\CreateContactReq.cs" />
+    <Compile Include="Contracts\Responses\AccountCases.cs" />
     <Compile Include="Contracts\Responses\CreateRecordResponse.cs" />
     <Compile Include="Contracts\Responses\ProcessStatusEnum.cs" />
+    <Compile Include="Contracts\Responses\RetrieveCasesResponse.cs" />
     <Compile Include="CRMasServiceLogic\CrmServiceLogic.cs" />
     <Compile Include="CRMasServiceLogic\ICrmServiceLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

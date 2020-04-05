@@ -14,5 +14,7 @@ namespace LinkDev.AngularAutomation.Services.CRMasServiceLogic.CRMasServiceLogic
         ICrmConnection CrmConnection { get; }
 
         CreateRecordResponse CreateContact(CreateContactReq CreateContactReq);
+        AccountCases GetAccountsWithCases();
+        RetrieveCasesResponse GetAccountRelatedCases(string AccountID);
     }
 }
