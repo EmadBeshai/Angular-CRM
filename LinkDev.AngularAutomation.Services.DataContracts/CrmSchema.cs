@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 using System.Reflection;
-using System.ServiceModel;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Messages;
